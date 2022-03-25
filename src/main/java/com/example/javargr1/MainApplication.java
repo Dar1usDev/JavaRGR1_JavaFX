@@ -1,5 +1,6 @@
 package com.example.javargr1;
 
+import Control.Log;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,6 +16,7 @@ public class MainApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 1000, 600);
         stage.setTitle("MainWindow");
         stage.setScene(scene);
+        Log.write("Application started");
         stage.show();
     }
 

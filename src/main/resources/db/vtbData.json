@@ -1,0 +1,42 @@
+[
+  {
+    "bank": "VTB",
+    "sum": 700000.0,
+    "term": 18,
+    "type": "FLAT",
+    "earlyRepayment": false,
+    "prolongation": false
+  },
+  {
+    "bank": "VTB",
+    "sum": 600000.0,
+    "term": 28,
+    "type": "GOODS",
+    "earlyRepayment": false,
+    "prolongation": false
+  },
+  {
+    "bank": "VTB",
+    "sum": 500000.0,
+    "term": 7,
+    "type": "CAR",
+    "earlyRepayment": false,
+    "prolongation": true
+  },
+  {
+    "bank": "VTB",
+    "sum": 300000.0,
+    "term": 45,
+    "type": "OTHER",
+    "earlyRepayment": true,
+    "prolongation": true
+  },
+  {
+    "bank": "VTB",
+    "sum": 260000.0,
+    "term": 23,
+    "type": "CAR",
+    "earlyRepayment": true,
+    "prolongation": false
+  }
+]

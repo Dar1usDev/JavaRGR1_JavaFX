@@ -1,0 +1,42 @@
+[
+  {
+    "bank": "Tinkoff",
+    "sum": 650000.0,
+    "term": 18,
+    "type": "GOODS",
+    "earlyRepayment": false,
+    "prolongation": true
+  },
+  {
+    "bank": "Tinkoff",
+    "sum": 660000.0,
+    "term": 23,
+    "type": "GOODS",
+    "earlyRepayment": false,
+    "prolongation": true
+  },
+  {
+    "bank": "Tinkoff",
+    "sum": 450000.0,
+    "term": 11,
+    "type": "CAR",
+    "earlyRepayment": false,
+    "prolongation": true
+  },
+  {
+    "bank": "Tinkoff",
+    "sum": 270000.0,
+    "term": 35,
+    "type": "OTHER",
+    "earlyRepayment": false,
+    "prolongation": false
+  },
+  {
+    "bank": "Tinkoff",
+    "sum": 290000.0,
+    "term": 22,
+    "type": "OTHER",
+    "earlyRepayment": true,
+    "prolongation": false
+  }
+]

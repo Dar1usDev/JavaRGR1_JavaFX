@@ -11,4 +11,5 @@ module com.example.javargr1 {
     exports com.example.javargr1;
     exports Control;
     opens Control to javafx.fxml;
+    opens Model to javafx.base;
 }

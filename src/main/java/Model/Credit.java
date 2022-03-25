@@ -125,6 +125,9 @@ public class Credit {
         return prolongation;
     }
 
+    /**
+     * Adapter for correct json
+     */
     public class CreditJsonAdapter extends TypeAdapter<Credit> {
         @Override
         public void write(JsonWriter out, Credit credit) throws IOException {

@@ -1,13 +1,13 @@
 package Model;
 
+import javafx.collections.ObservableList;
+
 import java.util.List;
 
 /**
  * Basic class for banks
  */
 public abstract class Bank {
-
-    protected static Bank instance;
 
     /**
      * Bank's name
@@ -34,7 +34,15 @@ public abstract class Bank {
      */
     public abstract double calculateCredit(double sum, int term, boolean prolong);
 
+    /**
+     * Method for adding a credit
+     * @param credit Credit ogject
+     */
     public abstract void addCredit(Credit credit);
+
+    public abstract List<Credit> getCreditOffers();
+
+    //public abstract ObservableList<Credit> getObservableCreditOffers();
 
     public abstract String getName();
 

@@ -1,22 +1,29 @@
 package Model.Banks;
 
+import Control.Log;
 import Model.Bank;
 import Model.Credit;
 import Model.IJSONIO;
-
 import Model.IMockData;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
-import java.io.FileWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 /**
  * Class for Sber
  */
 public class Sberbank extends Bank implements IJSONIO, IMockData {
+
+    /**
+     * Singlton object
+     */
+    static Sberbank instance;
 
     /**
      * Singleton realization
@@ -27,7 +34,7 @@ public class Sberbank extends Bank implements IJSONIO, IMockData {
         if (instance == null) {
             instance = new Sberbank();
         }
-        return (Sberbank) instance;
+        return instance;
     }
 
     public Sberbank() {
@@ -65,17 +72,61 @@ public class Sberbank extends Bank implements IJSONIO, IMockData {
     }
 
     @Override
-    public void readJSON() {
+    public List<Credit> getCreditOffers(){
+        return this.creditOffers;
+    }
 
+//    @Override
+//    public ObservableList<Credit> getObservableCreditOffers(){
+//        ObservableList<Credit> observableList = FXCollections.observableArrayList();
+//        //observableList.add(creditOffers.stream().forEach((x) -> new ););
+//        return observableList;
+//    }
+
+    @Override
+    public void readJSON() {
+        Runnable readRunnable = () -> {
+            try {
+                String jsonData = Files.readString(Path.of("src//main//resources//db//sberData.json"));
+                Sberbank.getInstance().creditOffers = new Gson().fromJson(jsonData, new TypeToken<List<Credit>>() {
+                }.getType());
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        };
+
+        Thread readThread = new Thread(readRunnable, "sberReadThread");
+        readThread.start();
+
+        try {
+            readThread.join();
+        } catch (InterruptedException ignored) {
+            // :)
+        }
+
+        Log.write(Sberbank.getInstance().creditOffers.size() + " objects were read for Sberbank");
     }
 
     @Override
     public void writeJSON() {
-        Gson gson = new Gson();
+        Runnable readRunnable = () -> {
+            GsonBuilder builder = new GsonBuilder();
+            builder.setPrettyPrinting();
+            Gson gson = builder.create();
+            try {
+                Files.write(Path.of("src//main//resources//db//sberData.json"), Collections.singleton(gson.toJson(Sberbank.getInstance().creditOffers)));
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        };
+
+        Thread writeThread = new Thread(readRunnable, "sberWriteThread");
+        writeThread.start();
+
         try {
-            Files.write(Path.of("src//main//resources//db//sberData.json"), Collections.singleton(gson.toJson(Sberbank.getInstance().creditOffers)));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            writeThread.join();
+        } catch (InterruptedException ignored) {
+            // :)
         }
     }
 

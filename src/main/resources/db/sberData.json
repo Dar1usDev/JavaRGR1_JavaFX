@@ -1,1 +1,42 @@
-[{"bank":"Sberbank","sum":100.0,"term":12,"type":"FLAT","earlyRepayment":true,"prolongation":false},{"bank":"Sberbank","sum":200.0,"term":24,"type":"GOODS","earlyRepayment":false,"prolongation":true},{"bank":"Sberbank","sum":300.0,"term":12,"type":"CAR","earlyRepayment":false,"prolongation":true},{"bank":"Sberbank","sum":500.0,"term":36,"type":"OTHER","earlyRepayment":true,"prolongation":false},{"bank":"Sberbank","sum":400.0,"term":24,"type":"GOODS","earlyRepayment":true,"prolongation":true}]
+[
+  {
+    "bank": "Sberbank",
+    "sum": 100000.0,
+    "term": 12,
+    "type": "FLAT",
+    "earlyRepayment": true,
+    "prolongation": false
+  },
+  {
+    "bank": "Sberbank",
+    "sum": 200000.0,
+    "term": 24,
+    "type": "GOODS",
+    "earlyRepayment": false,
+    "prolongation": true
+  },
+  {
+    "bank": "Sberbank",
+    "sum": 300000.0,
+    "term": 12,
+    "type": "CAR",
+    "earlyRepayment": false,
+    "prolongation": true
+  },
+  {
+    "bank": "Sberbank",
+    "sum": 500000.0,
+    "term": 36,
+    "type": "OTHER",
+    "earlyRepayment": true,
+    "prolongation": false
+  },
+  {
+    "bank": "Sberbank",
+    "sum": 400000.0,
+    "term": 24,
+    "type": "GOODS",
+    "earlyRepayment": true,
+    "prolongation": true
+  }
+]
