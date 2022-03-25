@@ -1,0 +1,74 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Bank{
+ #String name
+ #double rate
+ #List<Credit> creditOffers
+ +String getName()
+ +double getRate()
+}
+
+class Sberbank{
+-Sberbank instance
++Sberbank getInstance()
+}
+
+class Tinkoff{
+-Tinkoff instance
++Tinkoff getInstance()
+}
+
+class VTB{
+-VTB instance
++VTB getInstance()
+}
+
+class Credit{
+-Bank bank
+-double sum
+-int term
+-Types type
+-boolean earlyRepayment
+-boolean prolongation
++String toString()
+}
+
+class CreditTableView{
+- SimpleStringProperty bank;
+- SimpleDoubleProperty sum;
+- SimpleIntegerProperty term;
+- SimpleStringProperty type;
+- SimpleBooleanProperty earlyrepayment;
+- SimpleBooleanProperty prolongation;
+}
+
+interface IJSONIO{
++void readJSON();
++void writeJSON();
+}
+
+interface IMockData{
++void addMockData();
+}
+
+class Log{
+-boolean clean
++void write(String msg)
+}
+
+Sberbank <|-- Bank
+Tinkoff <|-- Bank
+VTB <|-- Bank
+
+Sberbank <|.. IJSONIO
+VTB <|.. IJSONIO
+Tinkoff <|.. IJSONIO
+
+Sberbank <|.. IMockData
+VTB <|.. IMockData
+Tinkoff <|.. IMockData
+
+Bank *.. Credit
+
+@enduml

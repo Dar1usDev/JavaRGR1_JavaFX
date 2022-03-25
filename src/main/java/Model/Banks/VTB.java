@@ -23,7 +23,7 @@ public class VTB extends Bank implements IJSONIO, IMockData {
     /**
      * Singlton object
      */
-    static VTB instance;
+    static private VTB instance;
 
     /**
      * Singleton realization

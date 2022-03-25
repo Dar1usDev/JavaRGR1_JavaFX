@@ -23,7 +23,7 @@ public class Tinkoff extends Bank implements IJSONIO, IMockData {
     /**
      * Singlton object
      */
-    static Tinkoff instance;
+    static private Tinkoff instance;
 
     /**
      * Singleton realization

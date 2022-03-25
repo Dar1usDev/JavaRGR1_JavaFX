@@ -23,7 +23,7 @@ public class Sberbank extends Bank implements IJSONIO, IMockData {
     /**
      * Singlton object
      */
-    static Sberbank instance;
+    static private Sberbank instance;
 
     /**
      * Singleton realization
