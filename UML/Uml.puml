@@ -9,9 +9,18 @@ abstract class Bank{
  +double getRate()
 }
 
+class MainController{
++ObservableList<CreditTableView> allCredits
++void initialize(URL url, ResourceBundle resourceBundle)
++void showCredits()
+}
+
 class Sberbank{
 -Sberbank instance
 +Sberbank getInstance()
+-void setInitialInterface()
+-void readData()
+-void mockAndWrite()
 }
 
 class Tinkoff{
@@ -71,4 +80,12 @@ Tinkoff <|.. IMockData
 
 Bank *.. Credit
 
+MainController o-- Sberbank
+MainController o-- Tinkoff
+MainController o-- VTB
+
+MainController *.. CreditTableView
+
+MainController o-- Log
+Sberbank o-- Log
 @enduml
